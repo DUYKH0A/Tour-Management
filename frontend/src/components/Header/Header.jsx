@@ -3,15 +3,21 @@ import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
-import './header.css';
+import "./header.css";
 
 const nav__link = [
   {
     path: "/home",
     display: "Home",
   },
-  { path: "#", display: "About" },
-  { path: "/tours/", display: "Tours" },
+  { 
+    path: "/about",
+    display: "About"
+  },
+  { 
+    path: "/tours/", 
+    display: "Tours" 
+  },
 ];
 
 const Header = () => {
@@ -27,7 +33,14 @@ const Header = () => {
               <ul className="menu d-flex align-items-center gap-5">
                 {nav__link.map((item, index) => (
                   <li className="nav__item" key={index}>
-                    <NavLink to={item.path} className={navClass => navClass.isActive ? "active__link" : ""}>{item.display}</NavLink>
+                    <NavLink
+                      to={item.path}
+                      className={(navClass) =>
+                        navClass.isActive ? "active__link" : ""
+                      }
+                    >
+                      {item.display}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -42,7 +55,7 @@ const Header = () => {
                 </Button>
               </div>
               <span className="mobile__menu">
-                <i class="ri-menu-line"></i>
+                <i className="ri-menu-line"></i>
               </span>
             </div>
           </div>
