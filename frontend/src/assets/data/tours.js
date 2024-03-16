@@ -11,6 +11,7 @@ const tours = [
     id: "01",
     title: "Westminister Bridge",
     city: "London",
+    address:'Lien chieu',
     distance: 300,
     price: 99,
     maxGroupSize: 10,
